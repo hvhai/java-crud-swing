@@ -1,2 +1,2 @@
-rootProject.name = "java-crud-mysql"
+rootProject.name = "java-crud-swing"
 

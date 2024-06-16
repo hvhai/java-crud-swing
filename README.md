@@ -6,5 +6,5 @@
 
 ## Command
 ```shell
-native-image -Djava.awt.headless=false -jar java-crud-mysql-1.0-SNAPSHOT.jar
+native-image -Djava.awt.headless=false -jar java-crud-swing-1.0-SNAPSHOT.jar
 ```
