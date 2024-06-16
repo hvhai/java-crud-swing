@@ -1,6 +1,5 @@
 plugins {
     id("java")
-    application
     id("org.graalvm.buildtools.native") version("0.10.2")
 }
 
@@ -29,10 +28,23 @@ tasks.withType<Jar> {
     }
 }
 
+graalvmNative {
+    binaries {
+        named("main") {
+            imageName.set("crud-swing-app")
+            mainClass.set("com.codehunter.Main")
+            buildArgs.add("-Djava.awt.headless=false")
+        }
+        named("test") {
+//            buildArgs.add("-O0")
+        }
+    }
+    binaries.all {
+        buildArgs.add("--verbose")
+//        buildArgs.add("-Djava.awt.headless=false")
+    }
+}
 tasks.test {
     useJUnitPlatform()
 }
 
-application {
-    mainClass.set("com.codehunter.Main")
-}
